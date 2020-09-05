@@ -1,0 +1,121 @@
+<div class="container">
+      <div class="mb-4 mt-4">
+        <h5 style="color: #CF1F1F">
+            Create User
+        </h5>
+        <hr>
+    </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div >
+            <div >
+              <form  class="form-horizontal"
+                [formGroup]="addUserForm" autocomplete="off">
+                <div class="row form-group" style="padding-left: 20px;">
+                    <div class="col-md-4 pl-0 mb-4">
+                        <label for="text-input" class=" form-control-label">Gender</label>
+                        <div>
+                            <mat-radio-group aria-label="Select an option" formControlName="gender">
+                                <mat-radio-button  value="male">Male</mat-radio-button>
+                                <mat-radio-button class="ml-3" value="female">Female</mat-radio-button>
+                                <mat-radio-button class="ml-3" value="other">Other</mat-radio-button>
+            
+                              </mat-radio-group>
+                        </div>
+
+        
+        
+                    </div>
+                  <div class=" col-md-4 pl-0 mb-4">
+                      <label for="text-input" class=" form-control-label">Name Title</label>
+                      <div class="row" style="width: 100%;">
+                        <div class="col-10 col-md-10"><input type="text"
+                            formControlName="title"  name="text-input" placeholder="Name Title" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class=" col-md-4 pl-0 mb-4">
+                        <label for="text-input" class=" form-control-label">First Name</label>
+                        <div class="row" style="width: 100%;">
+                          <div class="col-10 col-md-10"><input type="text"
+                              formControlName="firstName"  name="text-input" placeholder="First Name" class="form-control">
+                          </div>
+                        </div>
+                      </div> 
+                      <div class=" col-md-4 pl-0 mb-4">
+                        <label for="text-input" class=" form-control-label">Last Name</label>
+                        <div class="row" style="width: 100%;">
+                          <div class="col-10 col-md-10"><input type="text"
+                              formControlName="lastName"  name="text-input" placeholder="Last Name" class="form-control">
+                          </div>
+                        </div>
+                      </div> 
+                      <div class=" col-md-4 pl-0 mb-4">
+                        <label for="text-input" class=" form-control-label">Email</label>
+                        <div class="row" style="width: 100%;">
+                          <div class="col-10 col-md-10"><input type="email"
+                              formControlName="email"  name="text-input" placeholder="Email" class="form-control">
+                          </div>
+                        </div>
+                      </div> 
+                      <div class=" col-md-4 pl-0 mb-4">
+                        <label for="text-input" class=" form-control-label">Username</label>
+                        <div class="row" style="width: 100%;">
+                          <div class="col-10 col-md-10"><input type="text"
+                              formControlName="username"  name="text-input" placeholder="Last Name" class="form-control">
+                          </div>
+                        </div>
+                      </div> 
+                    <div class=" col-md-4 pl-0 mb-4">
+                        <label for="text-input" class=" form-control-label">Password</label>
+                        <div class="row" style="width: 100%;">
+                          <div class="col-10 col-md-10"><input [type]="hide ? 'password' : 'text'" 
+                              formControlName="password"  name="text-input" placeholder="Password" class="form-control">
+                          </div>
+                          <div class="col-2 col-md-2">
+                              <mat-icon matSuffix style="cursor: pointer;" (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                          </div>
+                        </div>
+                      </div>
+                      <div class=" col-md-4 pl-0 mb-4">
+                        <!-- <label for="text-input" class=" form-control-label"></label> -->
+                        <div class="row" style="width: 100%;">
+                          <div class="col-10 col-md-10">
+                            <mat-form-field class="example-full-width" appearance="outline" style="top: 15px; padding-bottom: 0;">
+                                <mat-label class="test2">DOB</mat-label>
+                                <input matInput [matDatepicker]="picker" formControlName="dob">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                              </mat-form-field>
+                          </div>
+                        </div>
+                      </div> 
+                      <div class=" col-md-4 pl-0 mb-4">
+                        <label for="text-input" class=" form-control-label">Phone</label>
+                        <div class="row" style="width: 100%;">
+                          <div class="col-10 col-md-10"><input type="text"
+                              formControlName="phone"  name="text-input" placeholder="Phone" class="form-control">
+                          </div>
+                        </div>
+                      </div> 
+                </div>
+    
+                
+                <div class="row form-group">
+                </div>
+                <div class=" form-group text-center mt-4">
+                    <button class="btn bg-dark mr-3 ml-3"
+                    (click)="onCancelClick()">Cancel</button>
+                  <button class="btn bg-dark mr-3 ml-3"
+                  [disabled]="!addUserForm?.valid"
+                  (click)="onAddUser()">Add</button>
+                </div>
+              </form>
+            </div>
+    
+          </div>
+    
+        </div>
+      </div>    
+
+</div>

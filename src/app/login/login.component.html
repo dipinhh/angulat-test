@@ -1,0 +1,43 @@
+<div class="col-xl-7 col-lg-7 col-md-3 float-left pl-0 pr-0 login-bg"><img src="./assets/images/login-bg.jpg" alt="" class="img-fluid">
+	<div class="login-content">
+		
+	</div>
+  </div>
+  <div style=" height: 100vh; position: relative;">
+<div class="col-xl-5 col-lg-5 col-md-9 float-left login-box">
+<div class="o-hidden border-0">
+<div class="card-body p-0">
+<div class="row right-area">
+<div class="pl-5 pr-5 pb-5 pt-0 m-auto w-100">
+<div class="text-center">
+<!-- <div class="col-md-12"><img src="./assets/images/logo2.png" alt="" class="img-fluid "></div> -->
+
+<h2 class="p-4 font-weight-bold">Sign In</h2>	
+</div>
+<form class="user" role="form" name="form" class="operator_login_input" (ngSubmit)="login()"  [formGroup]="loginForm"
+novalidate autocomplete="off">
+<div class="form-group">
+<input type="email" class="form-control form-control-user"  id="exampleInputEmail" name="username" formControlName="username" required aria-describedby="emailHelp" placeholder="Username">
+</div>
+<div class="form-group">
+<input type="password" class="form-control form-control-user" id="exampleInputPassword" name="password" formControlName="password" required placeholder="Password" required >
+</div>
+<div class="form-group">
+</div>
+ <div *ngIf="!isValid" style="color: #e74a3b; font-weight: 500;"> Incorrect Username or Password combination </div>
+                 
+<button [disabled]="loginForm.invalid" class="btn bg-dark btn-user btn-block mt-4 m-auto">
+Login
+</button>
+
+</form>
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>

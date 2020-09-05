@@ -1,0 +1,65 @@
+        <div >
+            <div class="row ml-0 mr-0 mt-5 user-table-area">
+                <div class="col-6">
+                    <h5 class="ml-2" style="color: #CF1F1F;">
+                        User Details
+
+                    </h5>
+                </div>
+                <!-- <div class="col-md-2">
+                    <input type="text" class="form-control" [formControl]="term">
+                </div> -->
+                <div class="col-6 text-right">
+                    <input type="text" class="form-control mr-4"
+                     style="width: auto; display: inline;" placeholder="Search..." [formControl]="term">
+                    <button class="add-button-bugs" (click)="onAddUserClick()">
+                        <span class="material-icons add-icon">
+                            add
+                        </span>
+                        <span class="ml-2"> Add User
+                        </span>
+                    </button>
+                </div>
+
+                <div class="table-responsive pt-4 pl-4 pr-4">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Sl.No</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">DOB</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Phone</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of userList | searchFilter : term.value; let i = index;">
+                                <td>
+                                    {{i+1}}
+                                </td>
+                                <td>
+                                   <span style="text-transform: capitalize;">{{data?.user?.name?.title}}. </span> {{data?.user?.name?.first}}{{data?.user?.name?.last}}
+                                </td>
+                                <td>
+                                    {{data.user?.username}}
+                                </td>
+                                <td>
+                                    {{data?.user?.email}}
+                                </td>
+                                <td>
+                                    {{data?.user?.dob | date: 'dd/MM/yyyy'}}
+                                </td>
+                                <td>
+                                    {{data?.user?.gender}}
+                                </td>
+                                <td>
+                                    {{data?.user?.phone}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
